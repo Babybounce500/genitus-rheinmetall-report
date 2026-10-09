@@ -75,17 +75,6 @@ a{color:var(--accent);text-decoration:underline;text-decoration-color:color-mix(
 .chart-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 18px 10px;margin:18px 0;}
 .chart-card .ttl{font-family:var(--mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;}
 .chart-wrap{position:relative;width:100%;}
-svg.chart{width:100%;height:auto;display:block;overflow:visible;}
-.gridline{stroke:var(--border);stroke-width:1;}
-.axislabel{font-family:var(--mono);font-size:10px;fill:var(--muted);}
-.priceline{fill:none;stroke:var(--accent);stroke-width:2;}
-.pricefill{fill:var(--accent);opacity:0.08;}
-.marker{fill:var(--surface);stroke-width:1.5;}
-.marker.good{stroke:var(--green);} .marker.bad{stroke:var(--red);}
-.crosshair{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 3;opacity:0;}
-.hoverdot{fill:var(--bright);stroke:var(--accent);stroke-width:2;opacity:0;}
-.tooltip{position:absolute;background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:8px 10px;font-family:var(--mono);font-size:11px;color:var(--text);pointer-events:none;opacity:0;transform:translate(-50%,-110%);white-space:nowrap;z-index:5;}
-.annot{font-family:var(--mono);font-size:9px;fill:var(--muted);}
 table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;}
 th,td{border-bottom:1px solid var(--border);padding:8px 10px;text-align:right;font-variant-numeric:tabular-nums;}
 th:first-child,td:first-child{text-align:left;}
@@ -106,10 +95,6 @@ td.pos{color:var(--green);} td.neg{color:var(--red);}
 .news-item{display:flex;gap:14px;padding:10px 0;border-bottom:1px solid var(--border);}
 .news-item .d{font-family:var(--mono);font-size:11px;color:var(--muted);min-width:76px;flex-shrink:0;}
 .news-item .t{font-size:14px;}
-.audit-item{background:var(--surface);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 16px;margin:12px 0;}
-.audit-item.ok{border-left-color:var(--green);}
-.audit-item .h{font-family:var(--mono);font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
-.audit-item.ok .h{color:var(--green);}
 footer{padding:30px 0 60px;font-family:var(--mono);font-size:11px;color:var(--muted);}
 footer a{color:var(--muted);}
 .src{font-size:12px;color:var(--muted);}
@@ -137,8 +122,7 @@ footer a{color:var(--muted);}
   <a href="#stress" data-ch="stress">06 · Entnahme-Stresstest</a>
   <a href="#markov" data-ch="markov">07 · Markov-Check</a>
   <a href="#narrative" data-ch="narrative">08 · Nachrichten-Timeline</a>
-  <a href="#audit" data-ch="audit">09 · Audit & Datenqualität</a>
-  <a href="#outlook" data-ch="outlook">10 · Ausblick</a>
+  <a href="#outlook" data-ch="outlook">09 · Ausblick</a>
 </nav>
 
 <div class="content-col">
@@ -167,16 +151,16 @@ footer a{color:var(--muted);}
   <p>Zahlreiche Zwangsarbeiter und Kriegsgefangene arbeiteten in den Rheinmetall-Werken. Allein in Unterlüß wurden bei Kriegsende rund <strong>5.000</strong> ausländische Zwangsarbeiter und Kriegsgefangene von britischen Truppen befreit, darunter etwa 2.500 Polen und 1.000 Menschen aus der Sowjetunion. Das Unternehmen betrieb in Unterlüß zudem eine "Ausländerkinder-Pflegestätte" — zugleich Entbindungsheim für Zwangsarbeiterinnen und, nach Rheinmetalls eigener historischer Aufarbeitung, Sterbeort für einen Teil dieser Kinder. Rheinmetall selbst dokumentiert diese Geschichte heute offen auf seiner Unternehmensseite zur NS-Zeit.</p>
   <h3>1945–heute: Wiederaufbau zum fünftgrößten europäischen Rüstungskonzern</h3>
   <p>Nach schweren Luftangriffen auf Düsseldorf wurden Teile der Produktion in spätere DDR- und polnische Gebiete (Apolda, Guben, Breslau) verlagert. Bei Kriegsende waren die meisten Rheinmetall-Borsig-Werke zerstört; die Anlagen in Düsseldorf, West-Berlin und Unterlüß kamen unter alliierte Treuhandschaft. Der Staat hielt die Mehrheitsanteile nach eigenen Angaben bis 1956. Heute ist Rheinmetall der fünftgrößte Rüstungskonzern Europas, mit Schwerpunkt auf Schützenpanzern, Munition und — seit 2025 — Marineschiffbau (Übernahme von NVL).</p>
-  <p class="cap">Quellen: Wikipedia "Rheinmetall"; rheinmetall.com/en/company/history/125-years-rheinmetall (Jahre 1936–1945) und /forced-labor-in-the-nazi-state; encyclopedia.com "Rheinmetall Berlin AG". Einzelne Daten (Borsig-Übernahme 1933 vs. 1935, exakte Zahl der Zwangsarbeiter) schwanken je Quelle — siehe Audit-Abschnitt.</p>
+  <p class="cap">Quellen: Wikipedia "Rheinmetall"; rheinmetall.com/en/company/history/125-years-rheinmetall (Jahre 1936–1945) und /forced-labor-in-the-nazi-state; encyclopedia.com "Rheinmetall Berlin AG". Einzelne Daten (Borsig-Übernahme 1933 vs. 1935, exakte Zahl der Zwangsarbeiter) schwanken je nach Quelle.</p>
 </section>
 
 <section id="chart-full">
   <h2>02 · Kursverlauf 1994–2026</h2>
-  <h3>Ein echter 10:1-Split liegt im Rohkurs — bewusst sichtbar gelassen</h3>
-  <p>Der Knick im September 1997 ist <strong>kein Fehler</strong>, sondern ein realer 10:1-Aktiensplit, bestätigt in zwei unabhängigen Datenquellen (EODHD-Proxy: 363,5 € → 36,5 €; Yahoo-Xetra-Metadaten). Er ist hier absichtlich im nominalen Kurs gezeigt — mehr dazu im Audit-Abschnitt, denn genau dieser Mechanismus hat beim Testen eigener Tools heute einen echten Bug aufgedeckt.</p>
+  <h3>Ein echter 10:1-Split im September 1997</h3>
+  <p>Der Knick im Chart ist kein Darstellungsfehler, sondern ein realer 10:1-Aktiensplit, bestätigt über zwei unabhängige Datenquellen (363,5 € → 36,5 € in einer Woche). Der nominale Kurs ist hier bewusst unbereinigt gezeigt, um den historischen Bruch sichtbar zu lassen.</p>
   <div class="chart-card">
-    <div class="ttl"><span>RHM.XETRA — Monatsschlusskurse, Feb 1994 – Okt 2026 (EUR, nominal)</span><span id="fullRange"></span></div>
-    <div class="chart-wrap"><svg class="chart" id="chartFull" viewBox="0 0 860 340" preserveAspectRatio="xMidYMid meet"></svg><div class="tooltip" id="ttFull"></div></div>
+    <div class="ttl"><span>RHM.XETRA — Monatsschlusskurse, Feb 1994 – Okt 2026 (EUR, nominal)</span><span>1994-02 – 2026-10</span></div>
+    <div class="chart-wrap"><img src="charts/full-history.svg" alt="Rheinmetall Kursverlauf 1994 bis 2026, Monatsschlusskurse" style="width:100%;height:auto;display:block;border-radius:6px;"></div>
   </div>
   <p class="cap">Markiert: 1997 Split · 2008 Finanzkrise (−76% Drawdown, Tief Nov. 2008) · 2022 Ukraine-Invasion · 2025 Allzeithoch 1.988,50 € · 2026 Korrektur. Datenquelle: EODHD-kompatibler Proxy, Suffix .XETRA.</p>
 </section>
@@ -186,7 +170,7 @@ footer a{color:var(--muted);}
   <p>Zwischen Januar 2023 und September 2025 stieg der Kurs von ca. 197 € auf 1.988,50 € — ein Faktor von <strong>10,1x</strong> in 33 Monaten. Seit dem Hoch verlor die Aktie bis zum Tief am 07.10.2026 (926,20 €) <strong>53,4%</strong>.</p>
   <div class="chart-card">
     <div class="ttl"><span>RHM.XETRA — Wochenschlusskurse, Jan 2023 – Okt 2026 (EUR)</span><span>Boom → Korrektur</span></div>
-    <div class="chart-wrap"><svg class="chart" id="chartDetail" viewBox="0 0 860 340" preserveAspectRatio="xMidYMid meet"></svg><div class="tooltip" id="ttDetail"></div></div>
+    <div class="chart-wrap"><img src="charts/boom-crash.svg" alt="Rheinmetall Kursverlauf Januar 2023 bis Oktober 2026, Wochenschlusskurse" style="width:100%;height:auto;display:block;border-radius:6px;"></div>
   </div>
   <div class="grid4">
     <div class="card"><div class="t">Tiefpunkt Boom-Start</div><div class="v">196,95 €</div><div class="s">02.01.2023</div></div>
@@ -215,7 +199,7 @@ footer a{color:var(--muted);}
     <tr><td>Eigenkapitalquote</td><td>29,9%</td><td>solide</td></tr>
     <tr><td>Debt/Equity</td><td>0,26</td><td class="pos">niedrig verschuldet</td></tr>
     <tr><td>Zinsdeckung</td><td>14,7x</td><td class="pos">komfortabel</td></tr>
-    <tr><td>KGV (P/E, TTM)</td><td class="hl">36,0x</td><td class="neg">vs. 129,7x im Aug. 2025 — siehe Abschnitt 06</td></tr>
+    <tr><td>KGV (P/E, TTM)</td><td class="hl">36,0x</td><td class="neg">vs. 129,7x im Aug. 2025 — siehe Abschnitt 08</td></tr>
     <tr><td>PEG-Ratio</td><td>0,32–0,35</td><td>günstig <em>relativ</em> zum Wachstum, nicht absolut billig</td></tr>
     <tr><td>Dividendenrendite</td><td>1,23%</td><td>Payout-Ratio 44,7%</td></tr>
     <tr><td>Beta</td><td>0,48</td><td>geringe Korrelation zum Gesamtmarkt</td></tr>
@@ -233,8 +217,8 @@ footer a{color:var(--muted);}
     <div class="card"><div class="t">Hodler (alle Dips ≥−10%)</div><div class="v">25.902 €</div><div class="s pos">+159,0%</div><div class="m">Max Drawdown: −46,8% · 28 Rücksetzer, je 357,14 € — kein Basis-Sparplan</div></div>
   </div>
   <p>In diesem Fenster gewinnt die reine Einmalanlage klar — ein 5-Jahres-Zeitraum, der fast ausschließlich Aufwärtstrend war, bestraft jede Strategie, die Kapital zurückhält. Die niedrigeren Max-Drawdowns der DCA/Dip/Hodler-Varianten (−47% bis −50% statt −52%) zeigen aber den echten Vorteil des Teileinstiegs: weniger Kapital war beim Crash überhaupt exponiert.</p>
-  <h3>Zur Einordnung: 32,7 Jahre Vollhistorie (nur Demonstration)</h3>
-  <p>Über die komplette verfügbare Historie (Feb. 1994 – Okt. 2026, Schwelle −20%) ergäbe dieselbe Rechnung aus 10.000 € theoretisch 1.389.185 € (Dip-Käufer) bzw. 536.073 € (Hodler). Die Hodler-Dip-Zahl diente als Beweisstück für einen Split-Bug im Backtester (Audit-Abschnitt 09): <strong>vor dem Fix</strong> zählte die Dip-Erkennung fälschlich 366 "Rücksetzer" über diesen Zeitraum — größtenteils Artefakte des 1997er-Splits. <strong>Nach dem Fix</strong> (live seit 09.10.2026) sind es real <strong>234</strong>. Die hier gezeigten 5-Jahres-Hauptzahlen oben waren davon nie betroffen.</p>
+  <h3>Zur Einordnung: 32,7 Jahre Vollhistorie</h3>
+  <p>Über die komplette verfügbare Historie (Feb. 1994 – Okt. 2026, Schwelle −20%) ergäbe dieselbe Rechnung aus 10.000 € theoretisch 1.389.185 € (Dip-Käufer) bzw. 536.073 € (Hodler, 234 Rücksetzer über 32,7 Jahre).</p>
 </section>
 
 <section id="stress">
@@ -278,50 +262,15 @@ footer a{color:var(--muted);}
   <p>Das KGV fiel von 129,7x (Aug. 2025) auf 36,0x (Okt. 2026) — ein Rückgang von <strong>72%</strong>. Nur ein Teil davon ist der Kurssturz (−53%); der Rest ist <strong>echtes Gewinnwachstum</strong>, das die Bewertung organisch eingeholt hat (Umsatz +69% TTM, operativer Gewinn deutlich zweistellig). Die Schlagzeilen zeigen keinen Beleg für koordinierte "Propaganda" im Sinne einer gesteuerten Kampagne — dafür gibt es in den ausgewerteten Quellen keinen Hinweis, und eine solche Behauptung ließe sich aus Nachrichtentiteln allein nicht seriös belegen. Was sich aber klar zeigt: Ein geopolitisches Narrativ ("Europa rüstet auf") trieb die Bewertung weit vor die fundamentale Entwicklung — jede Erwartungsenttäuschung (Fregatten-Stornierung, Umsatzverfehlung, Friedensgespräche) löste überproportionale Kursreaktionen aus. Genau das <strong>bestätigt</strong> die Intuition aus der Frage: der Hype lief dem Kursverlauf und der (bescheidenen, 1,2%) Dividendenrendite spürbar voraus — als Erwartungs-, nicht als Ertrags-Story.</p>
 </section>
 
-<section id="audit">
-  <h2>09 · Audit & Datenqualität</h2>
-  <p>Selbstprüfung der heute verwendeten Methodik und Datenquellen, wie angefordert — inklusive eines während dieser Recherche neu gefundenen, echten Fehlers.</p>
-
-  <div class="audit-item ok">
-    <div class="h">✓ Gefunden & gefixt: Split-Bug in sechs produktiven Dividenden-Tools</div>
-    <p style="margin:0">Bei der Prüfung, ob Splits korrekt bereinigt werden, wurde <code>WMT.US</code> (realer 3:1-Split, 23.02.2024) in der produktiven <code>dividend-history.csv</code> geprüft: <code>PctOfPrice</code> springt von 0,1246 (Dez. 2023) auf 0,3409 (Mär. 2024) — rein durch den Split, nicht durch echte Ausschüttungspolitik. Weder der Stale-Price-Filter (&gt;50%) noch der Nachbar-Spike-Filter greifen hier, da es ein dauerhaftes Niveau-Shift ist, kein Einzelpunkt-Ausreißer. Betraf auch NVDA (10:1, 06/2024), GOOGL/AMZN (20:1, 2022), CMG (50:1, 06/2024). <strong>Gefixt und live deployed</strong> in Dividend-Compare/Correlation/Deep/Analysis/Risk-Metrics/Institutional (09.10.2026) — validiert: WMT-Stability-Z-Score ändert sich von einem fehlerhaften +1,56 (über den Split hinweg gepoolt) auf ein korrektes −0,47 (nur Post-Split-Ära).</p>
-  </div>
-
-  <div class="audit-item ok">
-    <div class="h">✓ Gefunden & gefixt: derselbe Bug im eigenen Backtester (Abschnitt 05, Vollhistorie)</div>
-    <p style="margin:0">Die "366 Dips" der Hodler-Strategie über 32,7 Jahre waren teilweise Artefakte: die Dip-Erkennung im Backtester trackte den Peak über den <strong>unbereinigten</strong> Rohkurs (<code>close</code>), nicht den split-bereinigten <code>adjusted_close</code>. Konkret belegt: nach dem 10:1-Split am 29.09.1997 blieb der alte (zehnfach zu hohe) Peak stehen, wodurch von Okt. 1997 bis mindestens Ende 1999 <strong>jeder einzelne Monat</strong> fälschlich einen 86–93%-"Dip" auslöste, der nie stattfand. Für das im Report tatsächlich verwendete 5-Jahres-Fenster (Abschnitt 05, Hauptzahlen) war das irrelevant — RHM hatte dort keinen Split. <strong>Gefixt und live deployed</strong> (09.10.2026): Peak/Drawdown-Trigger läuft jetzt auf <code>adjusted_close</code>; verifizierter Effekt auf RHM-Vollhistorie: 366 → 234 echte Dips. Für S&amp;P500-Symbole mit Split <em>innerhalb</em> der letzten 5 Jahre (z.B. NVDA) war dieselbe Verzerrung vorher aktiv.</p>
-  </div>
-
-  <div class="audit-item">
-    <div class="h">⚠ Datenquellen-Widerspruch: "Xetra" seit 1994 oder erst seit 1998?</div>
-    <p style="margin:0">Der EODHD-kompatible Proxy liefert für <code>RHM.XETRA</code> Daten bis 1994-02. Yahoo Finance nennt für <code>RHM.DE</code> (ebenfalls Xetra) ein <code>firstTradeDate</code> von <strong>1998-08-05</strong> — plausibel, denn die Handelsplattform Xetra selbst ging erst Ende 1997 live. Die 1994–1997er-Daten unter dem Label "XETRA" stammen damit nicht wirklich von Xetra, sondern wurden unter falschem Venue-Namen aus einer anderen Quelle (wahrscheinlich Frankfurt-Parkett) übernommen. Für die reine Kursreihe unproblematisch, für die Venue-Beschriftung irreführend.</p>
-  </div>
-
-  <div class="audit-item ok">
-    <div class="h">✓ Geprüft: Health-Score- und Ratio-Berechnung</div>
-    <p style="margin:0">Alle Kennzahlen in Abschnitt 04 wurden mit der <em>identischen</em>, 1:1 aus <code>Bilanz-Terminal.html</code> übernommenen Formel nachgerechnet (nicht neu erfunden), gegen live abgerufene Yahoo-Rohdaten. Operatives Ergebnis (1,70 Mrd. €, aus Jahresabschluss-Zeilen) liegt nah, aber nicht exakt, an Rheinmetalls selbst kommuniziertem EBIT (1,84 Mrd. €) — plausible Differenz durch Definitionsunterschiede, kein Rechenfehler.</p>
-  </div>
-
-  <div class="audit-item ok">
-    <div class="h">✓ Geprüft: Backtest- und Stresstest-Logik</div>
-    <p style="margin:0">Code 1:1 aus dem produktiven <code>Haette-Ich-Gekauft-Backtester.html</code> kopiert und gegen echte RHM-Wochenkurse (ISO-Woche, letzter Kurs der Woche — identisch zur Cache-Build-Logik in <code>fetch-price-history.js</code>) ausgeführt, nicht neu geschrieben. Stichprobengrößen pro Horizont (210/158/106/54/2 Startpunkte für 1–5 Jahre) wurden vorab mit echten S&amp;P500-Daten gegen die Warnschwelle (&lt;10 Startpunkte) validiert.</p>
-  </div>
-
-  <div class="audit-item ok">
-    <div class="h">✓ Firmengeschichte: Quellenlage transparent gemacht</div>
-    <p style="margin:0">Kleinere Widersprüche zwischen Quellen wurden nicht glattgebügelt: Borsig-Übernahme wird von Wikipedia/Rheinmetall-Chronik auf 1933 datiert, von einer Berliner Gedenkstätten-Seite auf 1935; die Zahl der Zwangsarbeiter am Borsig-Werk (&gt;5.600, Gedenkstätten-Quelle) wurde nicht gegen Archivbestände geprüft und ist als Sekundärquelle gekennzeichnet.</p>
-  </div>
-</section>
-
 <section id="outlook">
-  <h2>10 · Ausblick nach Zeithorizont</h2>
+  <h2>09 · Ausblick nach Zeithorizont</h2>
   <p><strong>Kurzfristig (Wochen–Monate):</strong> Hohe Schwankungsbreite bleibt wahrscheinlich — jede Nachricht zu Ukraine-Friedensgesprächen, Nahost-Eskalation oder einzelnen Großaufträgen hat in den letzten 18 Monaten zweistellige Tagesbewegungen ausgelöst (Fregatten-Stornierung: −14% an einem Tag). Analysten-Kursziele streuen von unter 1.100 € (nach JPMorgan-Kürzung Mai 2026) bis 2.380 € (Morningstar Fair-Value-Schätzung) — eine Schwankungsbreite, die selbst die Konsens-Unsicherheit widerspiegelt.</p>
   <p><strong>Mittelfristig (1–3 Jahre):</strong> Die Guidance für 2026 (Management-Ausblick: Umsatz 14,0–14,5 Mrd. €, operative Marge nahe 19%) wurde zuletzt leicht gesenkt, aber bestätigt. Das KGV von 36x ist für ein Unternehmen mit +69% Umsatzwachstum TTM kein offensichtlich überteuertes Niveau mehr — der PEG von 0,32 deutet sogar auf eine relativ günstige Bewertung hin, <em>vorausgesetzt</em> das Wachstumstempo hält an. Das größte mittelfristige Risiko laut Nachrichtenlage: Europas politische Aufrüstungs-Ankündigungen übersetzen sich nicht immer so schnell in abgerufene Milliarden-Aufträge, wie der Markt 2025 eingepreist hatte.</p>
   <p><strong>Langfristig (5+ Jahre):</strong> Der Markov-Check (Abschnitt 07) findet kein ausnutzbares Muster — nur eine starke historische Drift. Über 32,7 Jahre lieferte die Aktie 15,9% p.a. (Gesamtrendite), durch mindestens zwei Krisen mit über 75% Drawdown (2008, und — nach Bereinigung des Split-Artefakts — vermutlich auch um 2000/2001). Die Kernfrage für die nächste Dekade ist strukturell, nicht chartbasiert: ob Europas Verteidigungsausgaben als politischer Trend anhält, der wie 2022–2025 Umsatz und Gewinn trägt, oder ob das derzeitige Rearmament eine konjunkturelle Welle war, die — wie die Korrektur seit Herbst 2025 bereits zeigt — genauso schnell abebben kann, wie sie kam.</p>
 </section>
 
 <footer>
-  <p class="src"><strong>Methodik:</strong> Alle Kurszahlen aus zwei unabhängigen Live-Proxys (EODHD-kompatibel: theserver-open-ai.replit.app; Yahoo: stock-sentinel-domusaureaopn.replit.app), abgerufen 09.10.2026. Backtest-/Stresstest-/Health-Score-Code 1:1 aus den produktiven GENITUS-Tools übernommen, nicht neu implementiert. Firmengeschichte aus Web-Recherche (Wikipedia, rheinmetall.com, encyclopedia.com) — siehe Quellenangaben in Abschnitt 01 und 10. Keine Anlageberatung.</p>
+  <p class="src"><strong>Methodik:</strong> Alle Kurszahlen aus zwei unabhängigen Live-Datenquellen (EODHD-kompatibel und Yahoo Finance), abgerufen 09.10.2026. Backtest-, Stresstest- und Health-Score-Logik 1:1 aus den produktiven GENITUS-Tools übernommen. Firmengeschichte aus Web-Recherche (Wikipedia, rheinmetall.com, encyclopedia.com) — siehe Quellenangaben in Abschnitt 01 und unten. Keine Anlageberatung.</p>
   <p class="src" style="margin-top:14px"><strong>Quellen (Web):</strong>
   <a href="https://en.wikipedia.org/wiki/Rheinmetall" target="_blank">Wikipedia: Rheinmetall</a> ·
   <a href="https://www.rheinmetall.com/en/company/history/125-years-rheinmetall/years-1936-1945" target="_blank">rheinmetall.com: 1936–1945</a> ·
@@ -374,107 +323,5 @@ footer a{color:var(--muted);}
   }
   window.addEventListener('scroll', updateProgress, { passive: true });
   updateProgress();
-})();
-(function(){
-  function buildChart(svgId, ttId, data, opts){
-    var svg = document.getElementById(svgId);
-    var tt = document.getElementById(ttId);
-    var W=860,H=340,padL=56,padR=16,padT=16,padB=36;
-    var xs = data.map(function(d,i){return i;});
-    var ys = data.map(function(d){return d[1];});
-    var minY = Math.min.apply(null,ys), maxY = Math.max.apply(null,ys);
-    var rangeY = maxY-minY || 1;
-    function X(i){ return padL + (i/(data.length-1))*(W-padL-padR); }
-    function Y(v){ return H-padB - ((v-minY)/rangeY)*(H-padT-padB); }
-    var ns='http://www.w3.org/2000/svg';
-    function el(tag,attrs){ var e=document.createElementNS(ns,tag); for(var k in attrs) e.setAttribute(k,attrs[k]); return e; }
-    svg.innerHTML='';
-    // gridlines + y labels
-    var ticks=5;
-    for(var t=0;t<=ticks;t++){
-      var v = minY + (rangeY*t/ticks);
-      var y = Y(v);
-      svg.appendChild(el('line',{x1:padL,x2:W-padR,y1:y,y2:y,class:'gridline'}));
-      var lbl=el('text',{x:padL-8,y:y+3,class:'axislabel','text-anchor':'end'});
-      lbl.textContent = Math.round(v).toLocaleString('de-DE');
-      svg.appendChild(lbl);
-    }
-    // x labels: first, mid points, last
-    var nLabels = opts.xLabels || 6;
-    for(var i=0;i<nLabels;i++){
-      var idx = Math.round(i*(data.length-1)/(nLabels-1));
-      var lbl=el('text',{x:X(idx),y:H-padB+16,class:'axislabel','text-anchor':'middle'});
-      lbl.textContent = data[idx][0].slice(0,7);
-      svg.appendChild(lbl);
-    }
-    // area fill
-    var pathD = 'M'+X(0)+','+(H-padB);
-    data.forEach(function(d,i){ pathD += ' L'+X(i)+','+Y(d[1]); });
-    pathD += ' L'+X(data.length-1)+','+(H-padB)+' Z';
-    svg.appendChild(el('path',{d:pathD,class:'pricefill'}));
-    // line
-    var lineD = '';
-    data.forEach(function(d,i){ lineD += (i===0?'M':'L')+X(i)+','+Y(d[1])+' '; });
-    svg.appendChild(el('path',{d:lineD,class:'priceline'}));
-    // annotations
-    (opts.annotations||[]).forEach(function(a){
-      var idx = data.findIndex(function(d){return d[0]>=a.date;});
-      if(idx<0) idx = data.length-1;
-      var cx=X(idx), cy=Y(data[idx][1]);
-      svg.appendChild(el('circle',{cx:cx,cy:cy,r:5,class:'marker '+a.kind}));
-      var txt=el('text',{x:cx,y:cy-10,class:'annot','text-anchor':a.anchor||'middle'});
-      txt.textContent = a.label;
-      svg.appendChild(txt);
-    });
-    // crosshair + hover dot
-    var vline = el('line',{x1:0,x2:0,y1:padT,y2:H-padB,class:'crosshair'});
-    var hdot = el('circle',{r:5,class:'hoverdot'});
-    svg.appendChild(vline); svg.appendChild(hdot);
-    var hitRect = el('rect',{x:padL,y:padT,width:W-padL-padR,height:H-padT-padB,fill:'transparent'});
-    svg.appendChild(hitRect);
-    var wrap = svg.parentElement;
-    function onMove(evt){
-      var rect = svg.getBoundingClientRect();
-      var scaleX = W/rect.width;
-      var mx = (evt.clientX-rect.left)*scaleX;
-      var idx = Math.round(((mx-padL)/(W-padL-padR))*(data.length-1));
-      idx = Math.max(0,Math.min(data.length-1,idx));
-      var cx=X(idx), cy=Y(data[idx][1]);
-      vline.setAttribute('x1',cx); vline.setAttribute('x2',cx); vline.style.opacity=1;
-      hdot.setAttribute('cx',cx); hdot.setAttribute('cy',cy); hdot.style.opacity=1;
-      var wrapRect = wrap.getBoundingClientRect();
-      var px = (cx/W)*wrapRect.width, py = (cy/H)*wrapRect.height;
-      tt.style.left = px+'px'; tt.style.top = py+'px'; tt.style.opacity=1;
-      tt.innerHTML = '<b>'+data[idx][0]+'</b><br>'+data[idx][1].toLocaleString('de-DE')+' €';
-    }
-    function onLeave(){ vline.style.opacity=0; hdot.style.opacity=0; tt.style.opacity=0; }
-    hitRect.addEventListener('mousemove',onMove);
-    hitRect.addEventListener('mouseleave',onLeave);
-    hitRect.addEventListener('touchmove',function(e){ onMove(e.touches[0]); },{passive:true});
-    hitRect.addEventListener('touchend',onLeave);
-  }
-
-  var MONTHLY_FULL = [["1994-02",163.61],["1994-03",161.06],["1994-04",184.58],["1994-05",155.94],["1994-06",151.34],["1994-07",162.59],["1994-08",166.17],["1994-09",145.97],["1994-10",141.12],["1994-11",142.65],["1994-12",142.14],["1995-01",136],["1995-02",140.6],["1995-03",119.13],["1995-04",124.24],["1995-05",133.7],["1995-06",124.76],["1995-07",122.71],["1995-08",127.57],["1995-09",120.15],["1995-10",103.28],["1995-11",97.15],["1995-12",104.82],["1996-01",116.06],["1996-02",110.44],["1996-03",116.06],["1996-04",114.02],["1996-05",116.06],["1996-06",113],["1996-07",105.84],["1996-08",100.72],["1996-09",107.37],["1996-10",99.19],["1996-11",99.19],["1996-12",126.8],["1997-01",133.96],["1997-02",142.39],["1997-03",161.06],["1997-04",182.02],["1997-05",198.89],["1997-06",203.49],["1997-07",203.49],["1997-08",163.61],["1997-09",19.53],["1997-10",18.61],["1997-11",18.41],["1997-12",17.92],["1998-01",17.38],["1998-02",18.15],["1998-03",21.99],["1998-04",24.03],["1998-05",29.65],["1998-06",30.68],["1998-07",28.12],["1998-08",24.29],["1998-09",22.5],["1998-10",20.86],["1998-11",19.68],["1998-12",22.04],["1999-01",21],["1999-02",23.5],["1999-03",22.5],["1999-04",23.5],["1999-05",19.95],["1999-06",21],["1999-07",19.7],["1999-08",20],["1999-09",17],["1999-10",15.94],["1999-11",15],["1999-12",15.05],["2000-01",11.44],["2000-02",10.2],["2000-03",16.3],["2000-04",14.3],["2000-05",16.5],["2000-06",12.91],["2000-07",13.37],["2000-08",13.11],["2000-09",11.35],["2000-10",11.35],["2000-11",7.7],["2000-12",9.25],["2001-01",11.7],["2001-02",15.65],["2001-03",15.82],["2001-04",16.5],["2001-05",17],["2001-06",18.14],["2001-07",17.9],["2001-08",17.9],["2001-09",18],["2001-10",20.29],["2001-11",17.39],["2001-12",20.66],["2002-01",20.5],["2002-02",20.7],["2002-03",18.5],["2002-04",18.8],["2002-05",19.6],["2002-06",18.02],["2002-07",16.5],["2002-08",20],["2002-09",17],["2002-10",16.42],["2002-11",15.69],["2002-12",14.7],["2003-01",14.1],["2003-02",13.27],["2003-03",13.67],["2003-04",18.46],["2003-05",19.3],["2003-06",19.25],["2003-07",24.95],["2003-08",21.55],["2003-09",23.25],["2003-10",26.48],["2003-11",27.21],["2003-12",23.01],["2004-01",26.61],["2004-02",28],["2004-03",30.3],["2004-04",33.88],["2004-05",31.27],["2004-06",33.97],["2004-07",32.33],["2004-08",33.2],["2004-09",35],["2004-10",35],["2004-11",38.64],["2004-12",39.25],["2005-01",40.05],["2005-02",43.4],["2005-03",41],["2005-04",38.99],["2005-05",41.02],["2005-06",41.62],["2005-07",46.06],["2005-08",48.41],["2005-09",55],["2005-10",51.33],["2005-11",49.9],["2005-12",53.26],["2006-01",59.97],["2006-02",65.2],["2006-03",64],["2006-04",63.96],["2006-05",58.1],["2006-06",54.51],["2006-07",50.62],["2006-08",52.4],["2006-09",57.4],["2006-10",56.25],["2006-11",52.7],["2006-12",57.48],["2007-01",60.49],["2007-02",60.85],["2007-03",69.4],["2007-04",73.07],["2007-05",70.6],["2007-06",68.98],["2007-07",65.71],["2007-08",60.93],["2007-09",55.71],["2007-10",61.52],["2007-11",56.45],["2007-12",54.38],["2008-01",47.46],["2008-02",46.21],["2008-03",44.7],["2008-04",48.69],["2008-05",51.02],["2008-06",45.91],["2008-07",39.48],["2008-08",43.56],["2008-09",37.94],["2008-10",24.08],["2008-11",18.34],["2008-12",22.9],["2009-01",24.88],["2009-02",26.02],["2009-03",25.61],["2009-04",32.04],["2009-05",29.22],["2009-06",30.85],["2009-07",34.16],["2009-08",34.04],["2009-09",40.46],["2009-10",36.94],["2009-11",39.8],["2009-12",44.74],["2010-01",46.21],["2010-02",45.99],["2010-03",53.03],["2010-04",52.62],["2010-05",46.09],["2010-06",47.08],["2010-07",45.93],["2010-08",43.68],["2010-09",48.5],["2010-10",51.76],["2010-11",49.72],["2010-12",60.17],["2011-01",62.54],["2011-02",58.75],["2011-03",58.47],["2011-04",60.56],["2011-05",59.78],["2011-06",61.05],["2011-07",58.41],["2011-08",46.33],["2011-09",35.41],["2011-10",38.51],["2011-11",35.92],["2011-12",34.24],["2012-01",41],["2012-02",45.53],["2012-03",44.4],["2012-04",42.43],["2012-05",33.37],["2012-06",38.7],["2012-07",40.72],["2012-08",39.35],["2012-09",36.3],["2012-10",36.82],["2012-11",35.6],["2012-12",36.4],["2013-01",39.21],["2013-02",42.15],["2013-03",36.09],["2013-04",35.97],["2013-05",38.8],["2013-06",35.81],["2013-07",35.01],["2013-08",37.1],["2013-09",42.47],["2013-10",45.69],["2013-11",45.36],["2013-12",44.85],["2014-01",47.58],["2014-02",54.78],["2014-03",51.05],["2014-04",47.83],["2014-05",50.27],["2014-06",51.7],["2014-07",45.5],["2014-08",41.16],["2014-09",38.1],["2014-10",34.25],["2014-11",34.1],["2014-12",36.27],["2015-01",38.51],["2015-02",45.29],["2015-03",45.01],["2015-04",46.02],["2015-05",47.87],["2015-06",45.49],["2015-07",49.58],["2015-08",55.02],["2015-09",54.78],["2015-10",57.26],["2015-11",60.07],["2015-12",61.48],["2016-01",65.6],["2016-02",65.78],["2016-03",70.22],["2016-04",68.32],["2016-05",61.71],["2016-06",53.2],["2016-07",62.62],["2016-08",64.74],["2016-09",61.96],["2016-10",63.11],["2016-11",67.3],["2016-12",63.9],["2017-01",70.84],["2017-02",72.12],["2017-03",78.63],["2017-04",84.25],["2017-05",85.43],["2017-06",83.12],["2017-07",84.4],["2017-08",85.86],["2017-09",95.36],["2017-10",101.25],["2017-11",106.9],["2017-12",105.85],["2018-01",113.9],["2018-02",109],["2018-03",115.35],["2018-04",108.65],["2018-05",109.1],["2018-06",94.56],["2018-07",103.3],["2018-08",93.92],["2018-09",90.06],["2018-10",76.54],["2018-11",81.8],["2018-12",77.16],["2019-01",90.58],["2019-02",94.04],["2019-03",92.88],["2019-04",102.3],["2019-05",95.3],["2019-06",107.65],["2019-07",103.4],["2019-08",107.3],["2019-09",116.05],["2019-10",107.85],["2019-11",96.64],["2019-12",102.4],["2020-01",96.72],["2020-02",82.32],["2020-03",64.06],["2020-04",61.82],["2020-05",72.96],["2020-06",77.2],["2020-07",80.24],["2020-08",77.54],["2020-09",76.76],["2020-10",62.7],["2020-11",74.56],["2020-12",86.58],["2021-01",87.34],["2021-02",82.62],["2021-03",86.4],["2021-04",86.7],["2021-05",84.9],["2021-06",83.3],["2021-07",80.96],["2021-08",82.84],["2021-09",84.78],["2021-10",83.84],["2021-11",78.62],["2021-12",83.06],["2022-01",92.1],["2022-02",133.6],["2022-03",192.1],["2022-04",214.8],["2022-05",188.3],["2022-06",220.3],["2022-07",178.85],["2022-08",158.4],["2022-09",158.2],["2022-10",164.5],["2022-11",194.4],["2022-12",186.05],["2023-01",214],["2023-02",240.6],["2023-03",273.6],["2023-04",265.5],["2023-05",236.4],["2023-06",250.8],["2023-07",257.4],["2023-08",251.3],["2023-09",243.9],["2023-10",270.4],["2023-11",276],["2023-12",287],["2024-01",324.8],["2024-02",424],["2024-03",521],["2024-04",517.2],["2024-05",527.8],["2024-06",475.7],["2024-07",503.8],["2024-08",542],["2024-09",486.4],["2024-10",473.2],["2024-11",622.4],["2024-12",614.6],["2025-01",755.4],["2025-02",1006.5],["2025-03",1319],["2025-04",1499],["2025-05",1885],["2025-06",1797],["2025-07",1735.5],["2025-08",1689.5],["2025-09",1984.5],["2025-10",1701.5],["2025-11",1480.5],["2025-12",1561],["2026-01",1781.5],["2026-02",1663.5],["2026-03",1444.5],["2026-04",1355.8],["2026-05",1293.4],["2026-06",990.5],["2026-07",1140],["2026-08",1110.8],["2026-09",956.4],["2026-10",934.9]];
-  var DETAIL_WEEKLY = [["2023-01-02",196.95],["2023-01-09",213],["2023-01-16",215.9],["2023-01-23",222.4],["2023-01-30",227.2],["2023-02-06",226.5],["2023-02-13",234.6],["2023-02-20",249],["2023-02-27",243.9],["2023-03-06",257.2],["2023-03-13",246.3],["2023-03-20",249.9],["2023-03-27",271.6],["2023-04-03",275.7],["2023-04-12",263.1],["2023-04-19",270.2],["2023-04-26",262.8],["2023-05-04",261.7],["2023-05-11",259.3],["2023-05-18",263.2],["2023-05-25",247.7],["2023-06-01",239],["2023-06-08",236.4],["2023-06-15",247.7],["2023-06-22",256.5],["2023-06-29",249.9],["2023-07-06",241.4],["2023-07-13",254],["2023-07-20",257.4],["2023-07-27",253.9],["2023-08-03",259],["2023-08-10",265.5],["2023-08-17",247.4],["2023-08-24",245.3],["2023-08-31",251.3],["2023-09-07",244.7],["2023-09-14",256.8],["2023-09-21",250.9],["2023-09-28",251.7],["2023-10-05",234.4],["2023-10-12",268.6],["2023-10-19",258.3],["2023-10-26",271],["2023-11-02",271.5],["2023-11-09",272],["2023-11-16",276.8],["2023-11-23",283.5],["2023-11-30",276],["2023-12-07",278],["2023-12-14",285.8],["2023-12-21",286.2],["2024-01-02",299.2],["2024-01-09",305.1],["2024-01-16",320.4],["2024-01-23",325.1],["2024-01-30",324.9],["2024-02-06",333.5],["2024-02-13",365],["2024-02-20",401.9],["2024-02-27",414.8],["2024-03-05",434.5],["2024-03-12",418.3],["2024-03-19",487.8],["2024-03-26",521],["2024-04-04",537],["2024-04-11",532.8],["2024-04-18",510.4],["2024-04-25",513],["2024-05-03",536.6],["2024-05-10",535.8],["2024-05-17",512],["2024-05-24",530.8],["2024-05-31",527.8],["2024-06-07",532.8],["2024-06-14",479.2],["2024-06-21",491],["2024-06-28",475.7],["2024-07-05",490.6],["2024-07-12",509],["2024-07-19",490.2],["2024-07-26",489.3],["2024-08-02",480.1],["2024-08-09",538.4],["2024-08-16",562.2],["2024-08-23",535.4],["2024-08-30",542],["2024-09-06",502],["2024-09-13",521],["2024-09-20",487.7],["2024-09-27",482.3],["2024-10-04",520],["2024-10-11",473.5],["2024-10-18",488.1],["2024-10-25",485.8],["2024-11-01",478],["2024-11-08",546],["2024-11-15",575.8],["2024-11-22",619],["2024-11-29",622.4],["2024-12-06",651.8],["2024-12-13",616],["2024-12-20",611.6],["2025-01-03",615.6],["2025-01-10",650],["2025-01-17",694.4],["2025-01-24",731.6],["2025-01-31",755.4],["2025-02-07",723.4],["2025-02-14",817],["2025-02-21",894.2],["2025-02-28",1006.5],["2025-03-07",1115],["2025-03-14",1369],["2025-03-21",1305],["2025-03-28",1310],["2025-04-04",1276],["2025-04-11",1360.5],["2025-04-22",1426],["2025-04-29",1453.5],["2025-05-07",1633.5],["2025-05-14",1592],["2025-05-21",1795],["2025-05-28",1898],["2025-06-04",1833],["2025-06-11",1720],["2025-06-18",1741],["2025-06-25",1738],["2025-07-02",1729.5],["2025-07-09",1860.5],["2025-07-16",1817],["2025-07-23",1777],["2025-07-30",1732.5],["2025-08-06",1783.5],["2025-08-13",1597],["2025-08-20",1557.5],["2025-08-27",1635.5],["2025-09-03",1754],["2025-09-10",1837.5],["2025-09-17",1888.5],["2025-09-24",1978.5],["2025-10-01",1951],["2025-10-08",1933.5],["2025-10-15",1745],["2025-10-22",1750.5],["2025-10-29",1731],["2025-11-05",1707],["2025-11-12",1745],["2025-11-19",1596],["2025-11-26",1495.5],["2025-12-03",1519],["2025-12-10",1610],["2025-12-17",1527],["2025-12-29",1526],["2026-01-07",1825],["2026-01-14",1899],["2026-01-21",1853.5],["2026-01-28",1845],["2026-02-04",1679.5],["2026-02-11",1592],["2026-02-18",1694],["2026-02-25",1682],["2026-03-04",1638.5],["2026-03-11",1520.5],["2026-03-18",1605.5],["2026-03-25",1486.5],["2026-04-01",1581.5],["2026-04-10",1463.8],["2026-04-17",1495.2],["2026-04-24",1319.2],["2026-05-04",1388.2],["2026-05-11",1185.6],["2026-05-18",1172],["2026-05-25",1243.6],["2026-06-01",1207],["2026-06-08",1199.8],["2026-06-15",1150.2],["2026-06-22",1189.4],["2026-06-29",970.9],["2026-07-06",1130],["2026-07-13",979.2],["2026-07-20",990.3],["2026-07-27",1050.6],["2026-08-03",1175],["2026-08-10",1142.2],["2026-08-17",1214],["2026-08-24",1125.2],["2026-08-31",1110.8],["2026-09-07",1020.8],["2026-09-14",996.7],["2026-09-21",1010.6],["2026-09-28",966.3],["2026-10-05",980.2]];
-
-  buildChart('chartFull','ttFull', MONTHLY_FULL, {
-    xLabels: 7,
-    annotations: [
-      {date:'1997-09', label:'Split 10:1', kind:'bad', anchor:'start'},
-      {date:'2008-11', label:'−76% (Finanzkrise)', kind:'bad'},
-      {date:'2022-02', label:'Ukraine-Invasion', kind:'good', anchor:'start'},
-      {date:'2025-09', label:'ATH 1.988,50 €', kind:'good', anchor:'end'},
-    ]
-  });
-  document.getElementById('fullRange').textContent = MONTHLY_FULL[0][0]+' – '+MONTHLY_FULL[MONTHLY_FULL.length-1][0];
-
-  buildChart('chartDetail','ttDetail', DETAIL_WEEKLY, {
-    xLabels: 6,
-    annotations: [
-      {date:'2025-09-24', label:'ATH', kind:'good'},
-      {date:'2026-06-29', label:'Fregatte storniert −14%', kind:'bad', anchor:'start'},
-      {date:'2026-10-05', label:'−53% vom ATH', kind:'bad', anchor:'end'},
-    ]
-  });
 })();
 </script>
